@@ -53,7 +53,26 @@ const turn = (squareId, player) => {
     origBoard[squareId] = player;
     // to see this we need to update the display's inner text to be the player or you
     document.getElementById(squareId).innerText = player;
+
+    /////////////////////////////////////
+    // * DETERMINE WINNER (ADD LOGIC)
+    /////////////////////////////////////
+    // gameWon checks the board array and see if the current player has won
+    let gameWon = checkWin(origBoard, player)
+    //  is game is won then game over
+    if (gameWon) gameOver(gameWon)
+}
+
+const checkWin = (board, player) {
+    // finds every index that the player has played in 
+    // a=accumulator the value we get back at the end (initialized to empty array)
+    // e=element in the board array that we're going through
+    // i=index
+    let plays = board.reduce((a, e, i) =>
+        // if below then add the index to that array if not that return a as is
+        (e === player)) ? a.concat(i) : a, []);
+    let gameWon = null;
+    for (let [index, win]) //////////// (24:00)
 }
 
 startGame();
-
