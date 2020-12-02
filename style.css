@@ -1,51 +1,95 @@
-td {
-    border: 2px solid #333;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    vertical-align: middle;
-    font-family: Comic Sans MS, cursive;
-    font-size: 70px;
-    cursor: pointer;
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * .9);
+  }
+body {
+    background: url('https://c2.staticflickr.com/6/5138/5443103160_023abd38a2_b.jpg') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+   
+}
+.corkboard-border {
+	padding: 1.5vw;
+	background: #a15e33;
+	background: radial-gradient(#a15e33, #3f2514);
+    box-shadow: 0 0 10px #000000;
+    width: 800px;
+    margin: 0 auto;
 }
 
-table {
-    border-collapse: collapse;
+.corkboard {
+	background: #B08E5E;
+	background: #55321B;
+	box-shadow: inset 0 0 10px #000000;
+    padding: 30px 20px 50px 20px;
+    position: relative;
+    height: 500px;
+    width: 750px;
+}
+
+.title-box {
+	display: inline-block;
+	background: #000;
+	padding: 0 2em;
+	border-radius: 10px;
+	box-shadow: 2px 3px 10px -1px rgba(0,0,0,0.75);
+	position: relative;
+    z-index: 1000;
+    height: 150px;
+}
+
+h1 {
+    font-size: 3em;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+h1,
+small {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	color: #fff;
+}
+
+.logo {
+	display: inline-block;
+	width: 100px;
+	height: auto;
+}
+
+header {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 12px;
     position: absolute;
     left: 50%;
-    margin-left: -155px;
-    top: 50px;
-}
-
-table tr:first-child td {
-    border-top: 0;
-}
-
-table tr:last-child td {
-    border-bottom: 0;
-}
-
-table tr td:first-child {
-    border-left: 0;
-}
-
-table tr td:last-child {
-    border-right: 0;
-}
-
-.endgame {
-    display: none;
-    width: 200px;
-    top: 120px;
-    background-color: rgba(205,133,63, 0.8);
-    position: absolute;
-    left: 50%;
-    margin-left: -100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-size: 2em;
+    margin-left: -245px;
+    top: 10%;
+    max-width: 495px;
     
 }
+
+.cell {
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255,255,255,.1);
+    height: 140px;
+    width: 160px;
+    text-align: center;
+    vertical-align: center;
+    /* font-size: 70px; */
+    transition: opacity 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
